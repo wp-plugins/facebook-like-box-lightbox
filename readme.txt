@@ -1,7 +1,7 @@
 === Facebook Like Box ===
 Contributors: deepaks
 Donate link: http://xlab.co.in/facebook_like/
-Tags: Facebook like, Popup Facebook Like, secure file, hot linking, disable direct download
+Tags: Facebook like, Popup Facebook Like
 Requires at least: 3.5
 Tested up to: 4.0
 License: GPLv2 or later

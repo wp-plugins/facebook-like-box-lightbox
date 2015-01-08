@@ -9,7 +9,7 @@ Author URI: http://xlab.biz/
 License: GPLv2
 */
 
-define('FBLIKE_PLUGIN_URL', plugins_url('/facebook-like/'));
+define('FBLIKE_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 /****************************** PLUGIN INSTALLATION_FUNCTION STARTS HERE *********************************************/ 
 
@@ -81,7 +81,7 @@ register_uninstall_hook( __FILE__, 'fblike_delete' );
 function fblike_setting_menu()  {
 
 
-  add_menu_page( 'Facebook Like Settings', 'Facebook Like Settings', 'manage_options', 'facebook-like-settings', 'fblike_print_settings_page_content', plugins_url( 'facebook-like/images/icon.png' ), 99.54 );
+  add_menu_page( 'Facebook Like Settings', 'Facebook Like Settings', 'manage_options', 'facebook-like-settings', 'fblike_print_settings_page_content', plugin_dir_url(__FILE__).'/images/icon.png' , 99.54 );
     
 }
 add_action('admin_menu', 'fblike_setting_menu');
