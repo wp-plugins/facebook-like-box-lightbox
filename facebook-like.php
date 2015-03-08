@@ -342,26 +342,6 @@ function fblike_show_popup() {
 global $pagenow;
 
   if(!is_admin() && ($pagenow != 'wp-login.php')) {
-  
-  
-  $fblike_height    = get_option( 'fblike_height', '' );
-  $fblike_width     = get_option( 'fblike_width', '' );
-  $fblike_page_url  = get_option( 'fblike_page_url', '' );
-  $fblike_color_scheme  = get_option( 'fblike_color_scheme', '' );
-  $fblike_show_faces  = get_option( 'fblike_show_faces', '' );
-  $fblike_header  = get_option( 'fblike_header', '' );
-
-    
-    $output = "";
-    
-    if(!empty($fblike_page_url)) {
-        $output .=  "<div id='fanback' class=".$fblike_color_scheme."><div id='fan-exit'></div><div id='JasperRoberts' class='JasperRoberts'><div id='TheBlogWidgets'></div><div class='remove-bordar'></div>";
-            
-        $output .=  "<iframe allowtransparency='true' frameborder='0' scrolling='no' src='//www.facebook.com/plugins/likebox.php? href=".$fblike_page_url."&width=".$fblike_width."&height=".$fblike_height."&colorscheme=".$fblike_color_scheme."&show_faces=".$fblike_show_faces."&show_border=false&stream=false&header=".$fblike_header."' style='border: none; overflow: hidden; margin-top: -19px; width: ".$fblike_width."px; height: ".$fblike_height."px;'></iframe>";
-        
-        $output .=  "</div></div>";
-    }
-    echo $output;
     add_action('wp_footer', 'fblike_custom_popup',100);
   }
 
@@ -380,6 +360,27 @@ function fblike_custom_popup() {
     if(!empty($fblike_page_url)) {
     
     
+    
+      $fblike_height    = get_option( 'fblike_height', '' );
+      $fblike_width     = get_option( 'fblike_width', '' );
+      $fblike_page_url  = get_option( 'fblike_page_url', '' );
+      $fblike_color_scheme  = get_option( 'fblike_color_scheme', '' );
+      $fblike_show_faces  = get_option( 'fblike_show_faces', '' );
+      $fblike_header  = get_option( 'fblike_header', '' );
+
+        
+        $output = "";
+        
+      if(!empty($fblike_page_url)) {
+        $output .=  "<div id='fanback' class=".$fblike_color_scheme."><div id='fan-exit'></div><div id='JasperRoberts' class='JasperRoberts'><div id='TheBlogWidgets'></div><div class='remove-bordar'></div>";
+
+        $output .=  "<iframe allowtransparency='true' frameborder='0' scrolling='no' src='//www.facebook.com/plugins/likebox.php? href=".$fblike_page_url."&width=".$fblike_width."&height=".$fblike_height."&colorscheme=".$fblike_color_scheme."&show_faces=".$fblike_show_faces."&show_border=false&stream=false&header=".$fblike_header."' style='border: none; overflow: hidden; margin-top: -19px; width: ".$fblike_width."px; height: ".$fblike_height."px;'></iframe>";
+            $output .=  "</div></div>";
+      }
+
+      echo $output;
+      $output = "";
+        
     $output .= "
             <script type='text/javascript'>
 
